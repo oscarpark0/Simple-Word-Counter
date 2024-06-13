@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+.settings-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px;
+    margin: auto;
+}
+
+h1 {
+    color: #5c67f2;
+}
+
+.option {
+    margin: 20px 0;
+}
+
+.custom-checkbox {
+    appearance: none;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+    font-size: 1.5em;
+    width: 1em;
+    height: 1em;
+    border: 2px solid #5c67f2;
+    border-radius: 0.45em;
+    display: inline-block;
+    position: relative;
+}
+
+.custom-checkbox:checked {
+    background-color: #5c67f2;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 0.25em;
+    top: 0.25em;
+    width: 0.1em;
+    height: 0.15em;
+    border: solid gold;
+    border-width: 2 0.1em 0.01em 0;
+
+}
+
+label {
+    font-size: 1em;
+    vertical-align: middle;
+}

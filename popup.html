@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extension Options</title>
+    <style>
+        body {
+            width: 250px; /* Adjust the width as needed */
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        label {
+            display: block; /* Make each label+checkbox appear on a new line */
+            margin-bottom: 8px; /* Add some space between the options */
+        }
+        #charCountDisplay {
+            margin-bottom: 15px; /* Add some space above the first option */
+            font-size: 14px;
+        }
+        a {
+            display: inline-block; /* Ensure the link doesn't stretch across the entire popup */
+            margin-top: 10px; /* Add some space above the feedback link */
+            text-decoration: none; /* Optional: Removes underline from the link */
+            color: #0000EE; /* Optional: Standard link color */
+        }
+    </style>
+</head>
+<body>
+    <p id="charCountDisplay"></p>
+    <label><input type="checkbox" id="toggleTooltip" checked> Show Tooltip</label>
+    <label><input type="checkbox" id="toggleWordCount" checked> Show Word Count</label>
+    <label><input type="checkbox" id="toggleCharCount" checked> Show Character Count</label>
+    <label><input type="checkbox" id="toggleNewSite" checked> New Site Default Behavior</label>
+    <a id="feedbackLink" href="https://forms.gle/Yc8QSwaTmswjCnuL8" target="_blank">Feedback</a>
+    <script src="popup.js"></script>
+</body>
+</html>
