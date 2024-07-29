@@ -2,6 +2,10 @@
 
 Simple Word Counter is a practical tool to streamline browsing and editing tasks. With a simple highlight, this Chrome extension promptly provides word and character count of text.
 
+# Chrome Web Store URL
+
+https://chromewebstore.google.com/detail/simple-word-counter/npbdkdphbeljebmbcddcpignamfbfpkg?hl=en-US
+
 # Features
 
 Immediate Word and Character Count: Selecting the text causes a tooltip to display the word and character count.
