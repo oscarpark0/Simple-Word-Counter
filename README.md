@@ -1,6 +1,6 @@
 # Overview
 
-Sum Select is a practical tool to streamline browsing and editing tasks. With a simple highlight, this Chrome extension promptly provides word and character count of text.
+Simple Word Counter is a practical tool to streamline browsing and editing tasks. With a simple highlight, this Chrome extension promptly provides word and character count of text.
 
 # Features
 
@@ -10,7 +10,7 @@ Default Behavior for New Sites: Easily manage the default behavior for new websi
 
 # How to Use
 
-1. Download and install the "Sum Select" extension from the Chrome Web Store.
+1. Download and install the "Simple Word Counter" extension from the Chrome Web Store.
 2. Highlight any desired text on a webpage.
 3. A tooltip will promptly pop up near the selected text, showing the word and character count.
 4. To access more settings, click on the extension icon to open the popup.
