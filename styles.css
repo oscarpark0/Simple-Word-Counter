@@ -1,58 +1,199 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 20px;
+/* CSS Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
-}
-
-.settings-container {
-    background: white;
+    padding: 0;
+  }
+  
+  /* Root Variables */
+  :root {
+    --primary-color: #5c67f2;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --font-size-base: 1rem;
+    --font-family-base: 'Arial', sans-serif;
+    --padding-base: 1.25rem;
+    --border-radius-base: 0.5rem;
+    --box-shadow-base: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    --settings-bg: white;
+    --checkbox-bg: #fff;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #f4f4f9;
+    --settings-bg: #2c2c2c;
+    --checkbox-bg: #4a4a4a;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: var(--font-family-base);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    min-width: 300px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Settings Container */
+  .settings-container {
+    background: var(--settings-bg);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
     margin: auto;
-}
-
-h1 {
-    color: #5c67f2;
-}
-
-.option {
-    margin: 20px 0;
-}
-
-.custom-checkbox {
+    transition: background-color 0.3s;
+  }
+  
+  /* Settings Title */
+  .settings-title {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  /* Settings Option */
+  .settings-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: row;
+  }
+  
+  /* Custom Checkbox */
+  .custom-checkbox {
     appearance: none;
-    background-color: #fff;
-    margin: 0 10px 0 0;
+    background-color: var(--checkbox-bg);
+    margin-right: 10px;
     font-size: 1.5em;
     width: 1em;
     height: 1em;
-    border: 2px solid #5c67f2;
+    border: 2px solid var(--primary-color);
     border-radius: 0.45em;
     display: inline-block;
     position: relative;
-}
-
-.custom-checkbox:checked {
-    background-color: #5c67f2;
-}
-
-.custom-checkbox:checked::after {
+    flex-shrink: 0;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-checkbox:checked {
+    background-color: var(--primary-color);
+  }
+  
+  .custom-checkbox:checked::after {
     content: '';
     position: absolute;
     left: 0.25em;
     top: 0.25em;
-    width: 0.1em;
-    height: 0.15em;
     border: solid gold;
-    border-width: 2 0.1em 0.01em 0;
-
-}
-
-label {
+    border-width: 0 0.1em 0.1em 0;
+    width: 0.25em;
+    height: 0.5em;
+    transform: rotate(45deg);
+  }
+  
+  /* Settings Label */
+  .settings-option__label {
     font-size: 1em;
     vertical-align: middle;
-}
+  }
+  
+  /* Character Count Display */
+  .char-count-display {
+    padding: 0.625rem;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  /* Feedback Link */
+  .feedback-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .feedback-link:hover,
+  .feedback-link:focus {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (min-width: 768px) {
+    .settings-container {
+      max-width: 50%;
+    }
+  }
+  
+  /* Tooltip Styles */
+  #wordCountTooltip {
+    position: fixed;
+    background-color: var(--settings-bg);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    z-index: 9999;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #wordCountTooltip.dark-mode {
+    --settings-bg: #2c2c2c;
+    --text-color: #f4f4f9;
+  }
+  
+  /* Dark mode toggle switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--primary-color);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
