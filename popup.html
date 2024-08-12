@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Extension Options</title>
-    <style>
-        body {
-            width: 250px; /* Adjust the width as needed */
-            padding: 10px;
-            font-family: Arial, sans-serif;
-        }
-        label {
-            display: block; /* Make each label+checkbox appear on a new line */
-            margin-bottom: 8px; /* Add some space between the options */
-        }
-        #charCountDisplay {
-            margin-bottom: 15px; /* Add some space above the first option */
-            font-size: 14px;
-        }
-        a {
-            display: inline-block; /* Ensure the link doesn't stretch across the entire popup */
-            margin-top: 10px; /* Add some space above the feedback link */
-            text-decoration: none; /* Optional: Removes underline from the link */
-            color: #0000EE; /* Optional: Standard link color */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__MSG_extName__</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p id="charCountDisplay"></p>
-    <label><input type="checkbox" id="toggleTooltip" checked> Show Tooltip</label>
-    <label><input type="checkbox" id="toggleWordCount" checked> Show Word Count</label>
-    <label><input type="checkbox" id="toggleCharCount" checked> Show Character Count</label>
-    <label><input type="checkbox" id="toggleNewSite" checked> New Site Default Behavior</label>
-    <a id="feedbackLink" href="https://forms.gle/Yc8QSwaTmswjCnuL8" target="_blank">Feedback</a>
+    <div class="settings-container" role="main">
+        <h1 class="settings-title">__MSG_settings__</h1>
+        <div class="settings-option">
+            <input type="checkbox" class="custom-checkbox" id="tooltip" aria-labelledby="tooltip-label" />
+            <label id="tooltip-label" for="tooltip" class="settings-option__label">__MSG_showPopup__</label>
+        </div>
+        <div class="settings-option">
+            <input type="checkbox" class="custom-checkbox" id="word-count" aria-labelledby="word-count-label" />
+            <label id="word-count-label" for="word-count" class="settings-option__label">__MSG_showWordCount__</label>
+        </div>
+        <div class="settings-option">
+            <input type="checkbox" class="custom-checkbox" id="char-count" aria-labelledby="char-count-label" />
+            <label id="char-count-label" for="char-count" class="settings-option__label">__MSG_showCharCount__</label>
+        </div>
+        <div class="settings-option">
+            <input type="checkbox" class="custom-checkbox" id="default-behavior" aria-labelledby="default-behavior-label" />
+            <label id="default-behavior-label" for="default-behavior" class="settings-option__label">__MSG_newSiteDefault__</label>
+        </div>
+        <div class="settings-option">
+            <label for="darkMode" class="switch" aria-label="__MSG_darkMode__">
+                <input type="checkbox" id="darkMode">
+                <span class="slider"></span>
+            </label>
+            <label for="darkMode">__MSG_darkMode__</label>
+        </div>
+    </div>
+    <p id="charCountDisplay" aria-live="polite"></p>
     <script src="popup.js"></script>
 </body>
 </html>
